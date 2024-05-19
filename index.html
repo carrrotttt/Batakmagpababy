@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PRODUCT </title>
+<style>
+  body {
+    background-color: #2b2e38;
+    background-repeat: repeat;
+    background-size: 100px;
+  }
+
+  .patutuya {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #ffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .patutuya p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #ffffff;
+  }
+
+  .patutuya button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #ffffff;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+  }
+
+  .patutuya button:hover {
+    background-color: #eeeeee;
+  }
+
+  .box {
+    max-width: 600px;
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #2b2e38;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+  }
+
+  .box p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #ffffff;
+  }
+
+  .slider-container {
+  margin-bottom: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+  }
+
+  .slider {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    margin: 20px auto;
+  }
+
+  .slider video {
+    border-radius: 30px;
+    width: 100%;
+    display: none;
+  }
+
+  .slider video:first-child {
+    display: block;
+  }
+
+  .prev,
+  .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    z-index: 1;
+  }
+  .video{
+     width: 80%;
+     heigh: 80%;
+     
+  }
+
+  .prev {
+    left: 10px;
+  }
+
+  .next {
+    right: 10px;
+  }
+
+  .center {
+    text-align: center;
+
+  }
+
+</style>
+</head>
+
+<body>
+
+<center><font color="#ffffff">
+  <h2> PRODUCT</h2>
+</font></center>
+
+<div class="slider-container">
+  <div class="slider">
+    <video controls>
+      <source src="pano.mp3" type="video/mp4">
+    </video>
+        
+    <div class="box" id="box1">
+      <div class="text">
+           <marquee> Ako nalang diay di man ko adik, ako nalang please 
+           </marquee>
+      </div>
+    
+          
+              
+      <center><button class="patutuya-button" onclick="alert('ako nalang :<')">
+        <font color="black">click me</font>
+      </button></center>
+    </div>
+
+    <video controls>
+      <source src="butterkisses.mp3" type="video/mp4">
+    </video>
+    <div class="box" id="box2">
+      <div class="text">
+           <marquee> Ako nalang diay di man ko adik, ako nalang please 
+           </marquee>
+        </div>
+      <center><button class="patutuya-button" onclick="alert('ako nalang tana to:<')">
+        <font color="black">click me</font>
+      </button></center>
+    </div>
+
+    <video controls>
+      <source src="tengneng.mp3" type="video/mp4">
+    </video>
+    <div class="box" id="box3">
+      <div class="text">
+           <marquee> Ako nalang diay di man ko adik, ako nalang please 
+           </marquee>
+        </div>
+      <center><button class="patutuya-button" onclick="alert('ako nalang tana to:<')">
+        <font color="black">click me</font>
+      </button></center>
+    </div>
+  </div>
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+
+<script>
+  var slideIndex = 1;
+  showSlides(slideIndex);
+
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+
+  function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("slider")[0].getElementsByTagName("video");
+    var boxes = document.getElementsByClassName("box");
+    if (n > slides.length) {
+      slideIndex = 1
+    }
+    if (n < 1) {
+      slideIndex = slides.length
+    }
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+      boxes[i].style.display = "none";
+    }
+    slides[slideIndex - 1].style.display = "block";
+    boxes[slideIndex - 1].style.display = "block";
+  }
+</script>
+
+</body>
+</html>
